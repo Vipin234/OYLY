@@ -1,0 +1,7 @@
+SELECT `mlu`.`notification_id`, `rsr`.`mobile_no`, `rsr`.`user_type`
+FROM `tbl_manage_login_user` AS `mlu`
+INNER JOIN `tbl_restaurant_staff_registration` AS `rsr` ON `rsr`.`mobile_no`=`mlu`.`mobile_no`
+WHERE `rsr`.`status` = 1
+AND `rsr`.`admin_id` = 'HRGR00003'
+AND `mlu`.`active_status` = 1
+AND `rsr`.`user_type` IN('Waiter','Supervisor')
